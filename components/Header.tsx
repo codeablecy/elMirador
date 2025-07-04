@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo";
+import { Button } from "@/components/ui/button";
 import { Mail, Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -48,13 +48,6 @@ export default function Header() {
             aria-label="Navegación principal"
           >
             <button
-              onClick={() => scrollToSection("pricing")}
-              className="text-white hover:text-[#f39416] hover:underline transition-colors"
-              aria-label="Ir a la sección de proyectos"
-            >
-              PROYECTOS
-            </button>
-            <button
               onClick={() => scrollToSection("gallery")}
               className="text-white hover:text-[#f39416] hover:underline transition-colors"
               aria-label="Ir a la sección de actualidad"
@@ -67,6 +60,13 @@ export default function Header() {
               aria-label="Ir a la sección sobre nosotros"
             >
               SOMOS
+            </button>
+             <button
+              onClick={() => scrollToSection("pricing")}
+              className="text-white hover:text-[#f39416] hover:underline transition-colors"
+              aria-label="Ir a la sección de proyectos"
+            >
+              PROYECTOS
             </button>
             <button
               onClick={() => scrollToSection("location")}
