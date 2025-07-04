@@ -18,21 +18,21 @@ export default function PricingSection() {
       surface: "120 m²",
       price: "Desde 350.000 €",
       details: "2 baños, gran terraza, salón de concepto abierto",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://plus.unsplash.com/premium_photo-1744532827450-278bcb55cd3d?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Apartamento de 3 Dormitorios",
       surface: "150 m²",
       price: "Desde 450.000 €",
       details: "3 baños, acabados premium, vistas al mar",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://plus.unsplash.com/premium_photo-1744532827462-3d651e2f7c6a?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Ático Deluxe",
       surface: "200 m²",
       price: "Desde 750.000 €",
       details: "4 baños, piscina privada, vistas 360°",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://plus.unsplash.com/premium_photo-1744532827467-64caf51965fa?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
   return (

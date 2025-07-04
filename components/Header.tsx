@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/logo";
 import { Mail, Menu, Phone, X } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 /**
@@ -38,8 +38,8 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center">
-            <Image src="/logo.png" alt="El Mirador" width={100} height={100} />
+          <div className="flex items-center h-20 md:h-24 lg:h-32">
+            <Logo />
           </div>
 
           {/* Desktop Navigation */}
@@ -96,7 +96,6 @@ export default function Header() {
                 <Mail className="w-4 h-4" />
                 <span>info@elmirador.com</span>
               </a>
-              
             </div>
             <div className="flex space-x-2">
               <Button className="bg-[#f39416] hover:bg-[#f39416]/90 text-white">

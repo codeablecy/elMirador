@@ -16,15 +16,15 @@ export default function HeroSection() {
           src="https://static.wixstatic.com/media/84770f_c0325f1a16204290a1b722019426b9dc~mv2.jpg/v1/fill/w_2912,h_1405,al_c,q_90,enc_avif,quality_auto/templatesdrive_concrete_wall_with_wood_in_a_new_boutique_buildi_3d51fda0-ea77-4436-afa6-11.jpg"
           alt="El Mirador Propiedad de Lujo"
           fill
-          className="object-cover"
+          className="object-cover opacity-50"
           priority
         />
       </div>
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
           El Mirador: Vivienda de lujo con vistas impresionantes
         </h1>
-        <p className="text-xl md:text-2xl mb-8 opacity-90">
+        <p className="text-xl md:text-2xl mb-8 text-white drop-shadow">
           Descubre apartamentos y áticos modernos en el corazón de la Costa del
           Sol
         </p>

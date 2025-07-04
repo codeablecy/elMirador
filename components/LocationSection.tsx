@@ -1,10 +1,66 @@
 import { Button } from "@/components/ui/button";
 import { Car, MapPin } from "lucide-react";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+import { useEffect, useRef } from "react";
 
 /**
  * Location/map section for El Mirador Website.
  */
 export default function LocationSection() {
+  const mapContainer = useRef<HTMLDivElement>(null);
+  const map = useRef<mapboxgl.Map | null>(null);
+  const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_API_KEY;
+
+  // Coordinates for Cuesta la Higuera, El Viso de San Juan, CP: 45215
+  const longitude = -3.92037;
+  const latitude = 40.14412;
+  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
+
+  useEffect(() => {
+    if (!mapContainer.current || !MAPBOX_TOKEN) return;
+    if (map.current) return; // initialize only once
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: "mapbox://styles/mapbox/satellite-v9",
+      center: [longitude, latitude],
+      zoom: 15,
+    });
+
+    // SVG pin, centered at (18, 34) for a 36x36 SVG, tip at bottom center
+    const el = document.createElement("div");
+    el.setAttribute("aria-label", "Ubicación de El Mirador");
+    el.innerHTML = `
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <filter id="shadow" x="0" y="0" width="200%" height="200%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
+        </filter>
+        <path
+          d="M18 2C10.82 2 5 7.82 5 15c0 7.18 10.13 18.13 12.13 20.13a2 2 0 0 0 2.74 0C20.87 33.13 31 22.18 31 15c0-7.18-5.82-13-13-13zm0 18a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"
+          fill="#FF3946"
+          filter="url(#shadow)"
+        />
+        <circle cx="18" cy="15" r="4" fill="#fff"/>
+      </svg>
+    `;
+    el.style.display = "block";
+    el.style.width = "36px";
+    el.style.height = "36px";
+    el.style.pointerEvents = "auto"; // allow interaction if needed
+
+    new mapboxgl.Marker({
+      element: el,
+      anchor: "bottom", // tip of pin at coordinate
+    })
+      .setLngLat([longitude, latitude])
+      .addTo(map.current!);
+
+    return () => {
+      map.current?.remove();
+    };
+  }, [MAPBOX_TOKEN, longitude, latitude]);
+
   return (
     <section id="location" className="py-20 bg-[#e9e4e3]">
       <div className="container mx-auto px-4">
@@ -12,29 +68,40 @@ export default function LocationSection() {
           Nuestra Ubicación
         </h2>
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gray-300 h-96 rounded-lg flex items-center justify-center mb-8">
-            <div className="text-center text-[#234457]">
-              <MapPin className="w-12 h-12 mx-auto mb-4" />
-              <p className="text-lg">
-                Aquí se integrará Google Maps interactivo
-              </p>
-              <p className="text-sm opacity-70">
-                Mostrando la ubicación exacta de El Mirador
-              </p>
-            </div>
+          <div className="bg-gray-300 h-96 rounded-lg flex items-center justify-center mb-8 relative overflow-hidden">
+            {MAPBOX_TOKEN ? (
+              <div
+                ref={mapContainer}
+                className="absolute inset-0 w-full h-full rounded-lg"
+                style={{ minHeight: 384 }}
+                aria-label="Mapa interactivo de la ubicación de El Mirador"
+              />
+            ) : (
+              <div className="text-center text-[#234457]">
+                <MapPin className="w-12 h-12 mx-auto mb-4" />
+                <p className="text-lg">
+                  Aquí se integrará Google Maps interactivo
+                </p>
+                <p className="text-sm opacity-70">
+                  Mostrando la ubicación exacta de El Mirador
+                </p>
+              </div>
+            )}
           </div>
           <div className="text-center">
             <p className="text-[#234457] text-lg mb-4">
-              Avenida del Mar, 123
+              Cuesta la Higuera, El Viso de San Juan
               <br />
-              29600 Marbella, Costa del Sol
+              CP: 45215
               <br />
               España
             </p>
-            <Button className="bg-[#f39416] hover:bg-[#f39416]/90 text-white">
-              <Car className="w-4 h-4 mr-2" />
-              Cómo llegar
-            </Button>
+            <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">
+              <Button className="bg-[#f39416] hover:bg-[#f39416]/90 text-white">
+                <Car className="w-4 h-4 mr-2" />
+                Cómo llegar
+              </Button>
+            </a>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             <div className="text-center">
