@@ -134,7 +134,6 @@ export default function Header() {
                 className="flex flex-col gap-2 mb-2"
                 aria-label="Navegación principal móvil"
               >
-                
                 <button
                   onClick={() => scrollToSection("gallery")}
                   className="w-full text-left text-white hover:text-[#f39416] py-2 px-2 rounded-lg transition-colors text-base font-medium"

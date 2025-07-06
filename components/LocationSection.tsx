@@ -120,7 +120,7 @@ export default function LocationSection() {
                   aria-label="Mapa interactivo de la ubicación de El Mirador"
                 />
                 {/* Apple Maps-style style switcher */}
-                <div className="absolute top-4 left-4 z-10">
+                <div className="absolute inline-block bottom-2 right-2 z-10">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/50 p-1">
                     <div className="flex gap-1">
                       <button
