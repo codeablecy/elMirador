@@ -134,13 +134,7 @@ export default function Header() {
                 className="flex flex-col gap-2 mb-2"
                 aria-label="Navegación principal móvil"
               >
-                <button
-                  onClick={() => scrollToSection("pricing")}
-                  className="w-full text-left text-white hover:text-[#f39416] py-2 px-2 rounded-lg transition-colors text-base font-medium"
-                  aria-label="Ir a la sección de proyectos"
-                >
-                  PROYECTOS
-                </button>
+                
                 <button
                   onClick={() => scrollToSection("gallery")}
                   className="w-full text-left text-white hover:text-[#f39416] py-2 px-2 rounded-lg transition-colors text-base font-medium"
@@ -154,6 +148,13 @@ export default function Header() {
                   aria-label="Ir a la sección sobre nosotros"
                 >
                   SOMOS
+                </button>
+                <button
+                  onClick={() => scrollToSection("pricing")}
+                  className="w-full text-left text-white hover:text-[#f39416] py-2 px-2 rounded-lg transition-colors text-base font-medium"
+                  aria-label="Ir a la sección de proyectos"
+                >
+                  PROYECTOS
                 </button>
                 <button
                   onClick={() => scrollToSection("location")}
