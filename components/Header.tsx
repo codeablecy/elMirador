@@ -61,7 +61,7 @@ export default function Header() {
             >
               SOMOS
             </button>
-             <button
+            <button
               onClick={() => scrollToSection("pricing")}
               className="text-white hover:text-[#f39416] hover:underline transition-colors"
               aria-label="Ir a la sección de proyectos"
@@ -79,24 +79,26 @@ export default function Header() {
 
           {/* Contact Info & CTAs */}
           <div className="hidden lg:flex items-center space-x-6">
-            <div className="flex items-center space-x-4 text-white text-sm">
-              <a
-                href="tel:+34XXXXXXXXX"
-                className="flex items-center space-x-1 hover:text-[#f39416] transition-colors"
-                aria-label="Llamar al +34 XXX XXX XXX"
-              >
-                <Phone className="w-4 h-4" />
-                <span>+34 XXX XXX XXX</span>
-              </a>
-              <a
-                href="mailto:info@elmirador.com"
-                className="flex items-center space-x-1 hover:text-[#f39416] transition-colors"
-                aria-label="Enviar correo a info@elmirador.com"
-              >
-                <Mail className="w-4 h-4" />
-                <span>info@elmirador.com</span>
-              </a>
-            </div>
+            {/* <div className="flex items-center space-x-4 text-white text-sm">
+              <div className="flex items-start text-white/80 hover:text-[#f39416] transition-colors">
+                <Phone className="w-4 h-4 mr-3 mt-0.5 text-[#f39416] flex-shrink-0" />
+                <a
+                  href="tel:+34655754978"
+                  className="text-sm text-white/80 hover:text-[#f39416] transition-colors"
+                >
+                  <span className="text-sm">+34 655 75 49 78</span>
+                </a>
+              </div>
+              <div className="flex items-start text-white/80 hover:text-[#f39416] transition-colors">
+                <Mail className="w-4 h-4 mr-3 mt-0.5 text-[#f39416] flex-shrink-0" />
+                <a
+                  href="mailto:info@chivana-realestate.com"
+                  className="text-sm text-white/80 hover:text-[#f39416] transition-colors"
+                >
+                  <span className="text-sm">info@chivana-realestate.com</span>
+                </a>
+              </div>
+            </div> */}
             <div className="flex space-x-2">
               <Button className="bg-[#f39416] hover:bg-[#f39416]/90 text-white">
                 CITA
@@ -125,43 +127,68 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#234457] border-t border-white/20">
-            <div className="py-4 space-y-4">
-              <button
-                onClick={() => scrollToSection("pricing")}
-                className="block w-full text-left text-white hover:text-[#f39416] py-2"
-                aria-label="Ir a la sección de proyectos"
+          <div className="lg:hidden fixed top-20 left-0 w-full z-40 px-4">
+            <div className="bg-[#234457] rounded-2xl shadow-2xl border border-white/10 p-6 flex flex-col items-stretch gap-4 animate-fade-in">
+              {/* Navigation */}
+              <nav
+                className="flex flex-col gap-2 mb-2"
+                aria-label="Navegación principal móvil"
               >
-                PROYECTOS
-              </button>
-              <button
-                onClick={() => scrollToSection("gallery")}
-                className="block w-full text-left text-white hover:text-[#f39416] py-2"
-                aria-label="Ir a la sección de actualidad"
-              >
-                ACTUALIDAD
-              </button>
-              <button
-                onClick={() => scrollToSection("promotion")}
-                className="block w-full text-left text-white hover:text-[#f39416] py-2"
-                aria-label="Ir a la sección sobre nosotros"
-              >
-                SOMOS
-              </button>
-              <button
-                onClick={() => scrollToSection("location")}
-                className="block w-full text-left text-white hover:text-[#f39416] py-2"
-                aria-label="Ir a la sección de contacto"
-              >
-                CONTACTO
-              </button>
-              <div className="flex space-x-2 pt-4">
-                <Button className="bg-[#f39416] hover:bg-[#f39416]/90 text-white flex-1">
+                <button
+                  onClick={() => scrollToSection("pricing")}
+                  className="w-full text-left text-white hover:text-[#f39416] py-2 px-2 rounded-lg transition-colors text-base font-medium"
+                  aria-label="Ir a la sección de proyectos"
+                >
+                  PROYECTOS
+                </button>
+                <button
+                  onClick={() => scrollToSection("gallery")}
+                  className="w-full text-left text-white hover:text-[#f39416] py-2 px-2 rounded-lg transition-colors text-base font-medium"
+                  aria-label="Ir a la sección de actualidad"
+                >
+                  ACTUALIDAD
+                </button>
+                <button
+                  onClick={() => scrollToSection("promotion")}
+                  className="w-full text-left text-white hover:text-[#f39416] py-2 px-2 rounded-lg transition-colors text-base font-medium"
+                  aria-label="Ir a la sección sobre nosotros"
+                >
+                  SOMOS
+                </button>
+                <button
+                  onClick={() => scrollToSection("location")}
+                  className="w-full text-left text-white hover:text-[#f39416] py-2 px-2 rounded-lg transition-colors text-base font-medium"
+                  aria-label="Ir a la sección de contacto"
+                >
+                  CONTACTO
+                </button>
+              </nav>
+              <div className="border-t border-white/10 my-2" />
+              {/* CTAs */}
+              <div className="flex gap-2">
+                <Button className="flex-1 bg-[#f39416] hover:bg-[#f39416]/90 text-white rounded-lg px-5 py-2 text-base font-semibold shadow-md flex items-center justify-center gap-2">
                   CITA
                 </Button>
-                <Button className="bg-[#f39416] hover:bg-[#f39416]/90 text-white flex-1">
+                <Button className="flex-1 bg-[#f39416] hover:bg-[#f39416]/90 text-white rounded-lg px-5 py-2 text-base font-semibold shadow-md flex items-center justify-center gap-2">
                   VISITA
                 </Button>
+              </div>
+              {/* Contact Info */}
+              <div className="mt-2 px-3 py-2 bg-[#234457]/80 rounded-lg border border-white/10 flex flex-col items-start gap-1">
+                <a
+                  href="tel:+34655754978"
+                  className="flex items-center text-white/80 hover:text-[#f39416] transition-colors text-sm font-medium mb-1"
+                >
+                  <Phone className="w-4 h-4 mr-2 text-[#f39416] flex-shrink-0" />
+                  +34 655 75 49 78
+                </a>
+                <a
+                  href="mailto:info@chivana-realestate.com"
+                  className="flex items-center text-white/80 hover:text-[#f39416] transition-colors text-sm font-medium"
+                >
+                  <Mail className="w-4 h-4 mr-2 text-[#f39416] flex-shrink-0" />
+                  info@chivana-realestate.com
+                </a>
               </div>
             </div>
           </div>
