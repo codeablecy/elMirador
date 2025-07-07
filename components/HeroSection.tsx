@@ -12,7 +12,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative h-screen flex items-center justify-center"
+      className="relative min-h-screen flex flex-col items-center justify-between bg-black/50"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30">
         <Image
@@ -23,33 +23,35 @@ export default function HeroSection() {
           priority
         />
       </div>
-      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 pt-8 pb-32 sm:pb-16">
-        <LogoEl className="hidden md:block  justify-center items-center  mx-auto -mb-14 -mt-20 top-10" />
-        <h1
-          className="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg"
+      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 pb-32 sm:pb-8">
+        <LogoEl className="block justify-center items-center -mb-10 mx-auto " />
+        {/* <h1
+          className="hidden  text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg"
           style={{ fontFamily: "var(--font-main)" }}
         >
           El Mirador del Viso de San Juan
-        </h1>
+        </h1> */}
         <p
-          className="subtitle text-xl md:text-2xl mb-8 text-white drop-shadow"
+          className="subtitle text-xl md:text-2xl mb-8 text-white -mt-16 drop-shadow"
           style={{ fontFamily: "var(--font-sub)" }}
         >
           La mejor opción para vivir en El Viso de San Juan. A un paso de Madrid
           y Toledo, disfruta de tranquilidad, naturaleza y calidad de vida en
           viviendas exclusivas.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mb-10">
           <Button
             size="lg"
-            className="bg-[#f39416] hover:bg-[#f39416]/90 text-white text-lg px-8 py-4 rounded-xl"
+            className="bg-[#f39416] hover:bg-[#f39416]/90 text-white text-lg px-8 py-4 rounded-xl w-full sm:w-auto flex items-center justify-center"
+            aria-label="Solicitar Cita"
           >
             <Calendar className="w-5 h-5 mr-2" />
             Solicitar Cita
           </Button>
           <Button
             size="lg"
-            className="bg-[#f39416] hover:bg-[#f39416]/90 text-white text-lg px-8 py-4 rounded-xl"
+            className="bg-[#f39416] hover:bg-[#f39416]/90 text-white text-lg px-8 py-4 rounded-xl w-full sm:w-auto flex items-center justify-center"
+            aria-label="Visita Virtual"
           >
             <Eye className="w-5 h-5 mr-2" />
             Visita Virtual
@@ -57,7 +59,7 @@ export default function HeroSection() {
         </div>
       </div>
       {/* Info Panel Overlay */}
-      <div className="absolute bottom-6 sm:bottom-8 right-1/2 translate-x-1/2 sm:right-8 sm:translate-x-0 flex flex-row justify-center gap-4 z-20 max-w-full px-4 sm:px-0">
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 sm:left-auto sm:right-8 sm:translate-x-0 flex flex-row justify-center gap-4 z-20 max-w-full px-4 sm:px-8">
         {/* Estado Box */}
         <div
           className="items-center rounded-2xl p-4 sm:p-6 min-w-[140px] sm:min-w-[180px] flex flex-col shadow-xl w-full sm:w-auto transition hover:scale-[1.03] hover:shadow-2xl"
@@ -66,6 +68,7 @@ export default function HeroSection() {
             color: "#fff",
             fontFamily: "var(--font-sub)",
           }}
+          aria-label="Estado de la obra"
         >
           <div
             className="mb-2 sm:mb-3 rounded-lg p-1.5 sm:p-2 flex"
@@ -87,6 +90,7 @@ export default function HeroSection() {
             color: "#fff",
             fontFamily: "var(--font-sub)",
           }}
+          aria-label="Tipología de viviendas"
         >
           <div
             className="mb-2 sm:mb-3 rounded-lg p-1.5 sm:p-2 flex"
@@ -108,6 +112,7 @@ export default function HeroSection() {
       <div className="absolute -bottom-4 transform -translate-x-1/2 text-white animate-bounce z-30">
         <ChevronDown className="w-8 h-8" />
       </div>
+      
     </section>
   );
 }
