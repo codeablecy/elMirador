@@ -79,8 +79,8 @@ export default function HeroSection() {
               style={{ color: "#234457" }}
             />
           </div>
-          <span className="font-bold text-base sm:text-lg mb-1">Estado</span>
-          <span className="text-xs sm:text-sm opacity-90">Obras iniciadas</span>
+          <span className="font-bold text-base sm:text-lg mb-1" style={{ fontFamily: "var(--font-main)" }}>Estado</span>
+          <span className="text-xs sm:text-sm opacity-90" style={{ fontFamily: "var(--font-sub)" }}>Obras iniciadas</span>
         </div>
         {/* Typography Box */}
         <div
@@ -101,15 +101,15 @@ export default function HeroSection() {
               style={{ color: "#234457" }}
             />
           </div>
-          <span className="font-bold text-base sm:text-lg mb-1">
+          <span className="font-bold text-base sm:text-lg mb-1" style={{ fontFamily: "var(--font-main)" }}>
             Typography
           </span>
-          <span className="text-xs sm:text-sm opacity-90 ">
+          <span className="text-xs sm:text-sm opacity-90" style={{ fontFamily: "var(--font-sub)" }}>
             Amplios chalets <br /> con jardín privado
           </span>
         </div>
       </div>
-      <div className="absolute -bottom-4 transform -translate-x-1/2 text-white animate-bounce z-30">
+      <div className="absolute -bottom-2 transform -translate-x-1/2 text-white animate-bounce z-30">
         <ChevronDown className="w-8 h-8" />
       </div>
       
