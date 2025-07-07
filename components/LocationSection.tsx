@@ -109,7 +109,7 @@ export default function LocationSection() {
         <h2 className="text-4xl font-bold text-center text-[#234457] mb-12">
           Nuestra Ubicación
         </h2>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-full mx-auto">
           <div className="bg-gray-300 h-96 rounded-2xl flex items-center justify-center mb-8 relative overflow-hidden shadow-lg">
             {MAPBOX_TOKEN ? (
               <>
