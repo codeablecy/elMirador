@@ -33,7 +33,7 @@ export default function HeroSection() {
         </h1> */}
         <p
           className="subtitle text-xl md:text-2xl mb-8 text-white -mt-16 drop-shadow"
-          style={{ fontFamily: "var(--font-sub)" }}
+          style={{ fontFamily: "var(--font-main)" }}
         >
           La mejor opción para vivir en El Viso de San Juan. A un paso de Madrid
           y Toledo, disfruta de tranquilidad, naturaleza y calidad de vida en
