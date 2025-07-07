@@ -14,15 +14,15 @@ interface LogoProps {
  * @param className - Clases CSS adicionales
  * @param alt - Texto alternativo para accesibilidad
  */
-export function Logo({
-  width = 200,
-  height = 200,
-  className = "object-contain w-48 h-48 md:w-52 md:h-52",
+export function LogoEl({
+  width = 600,
+  height = 600,
+  className = "object-contain md:w-auto md:h-auto",
   alt = "Logotipo de El Mirador",
 }: LogoProps) {
   return (
     <Image
-      src="/logoChivana/007.png"
+      src="/logoEl/01.png"
       alt={alt}
       width={width}
       height={height}

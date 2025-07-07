@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import Footer from "@/components/Footer";
 import GallerySection from "@/components/GallerySection";
-import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import LocationSection from "@/components/LocationSection";
 import PricingSection from "@/components/PricingSection";
@@ -94,7 +94,7 @@ export default function ElMiradorWebsite() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <Navbar />
       <HeroSection />
       <GallerySection />
       <PromotionSection />

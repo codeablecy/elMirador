@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, ChevronDown, Clock, Eye } from "lucide-react";
+import { Calendar, ChevronDown, Eye } from "lucide-react";
 import Image from "next/image";
+import { BsFillBuildingsFill } from "react-icons/bs";
+import { PiClockCountdownFill } from "react-icons/pi";
+import { LogoEl } from "./logoEl";
 
 /**
  * Hero section for El Mirador Website.
@@ -20,7 +23,8 @@ export default function HeroSection() {
           priority
         />
       </div>
-      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 pt-8 pb-32 sm:pb-16">
+        <LogoEl className="hidden md:block  justify-center items-center  mx-auto -mb-14 -mt-20 top-10" />
         <h1
           className="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg"
           style={{ fontFamily: "var(--font-main)" }}
@@ -53,7 +57,7 @@ export default function HeroSection() {
         </div>
       </div>
       {/* Info Panel Overlay */}
-      <div className="absolute bottom-3 md:bottom-8 right-1/2 translate-x-1/2 sm:right-8 sm:translate-x-0 flex flex-col sm:flex-row gap-4 z-20 max-w-full px-4 sm:px-0">
+      <div className="absolute bottom-6 sm:bottom-8 right-1/2 translate-x-1/2 sm:right-8 sm:translate-x-0 flex flex-row justify-center gap-4 z-20 max-w-full px-4 sm:px-0">
         {/* Estado Box */}
         <div
           className="items-center rounded-2xl p-4 sm:p-6 min-w-[140px] sm:min-w-[180px] flex flex-col shadow-xl w-full sm:w-auto transition hover:scale-[1.03] hover:shadow-2xl"
@@ -67,18 +71,43 @@ export default function HeroSection() {
             className="mb-2 sm:mb-3 rounded-lg p-1.5 sm:p-2 flex"
             style={{ background: "#e9e4e3" }}
           >
-            <Clock
-              className="w-5 h-5 sm:w-6 sm:h-6"
+            <PiClockCountdownFill
+              className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse"
               style={{ color: "#234457" }}
             />
           </div>
           <span className="font-bold text-base sm:text-lg mb-1">Estado</span>
-          <span className="text-xs sm:text-sm opacity-90">Obra iniciada</span>
+          <span className="text-xs sm:text-sm opacity-90">Obras iniciadas</span>
+        </div>
+        {/* Typography Box */}
+        <div
+          className="items-center rounded-2xl p-4 sm:p-6 min-w-[140px] sm:min-w-[180px] flex flex-col shadow-xl w-full sm:w-auto transition hover:scale-[1.03] hover:shadow-2xl"
+          style={{
+            background: "#234457",
+            color: "#fff",
+            fontFamily: "var(--font-sub)",
+          }}
+        >
+          <div
+            className="mb-2 sm:mb-3 rounded-lg p-1.5 sm:p-2 flex"
+            style={{ background: "#e9e4e3" }}
+          >
+            <BsFillBuildingsFill
+              className="w-5 h-5 sm:w-6 sm:h-6"
+              style={{ color: "#234457" }}
+            />
+          </div>
+          <span className="font-bold text-base sm:text-lg mb-1">
+            Typography
+          </span>
+          <span className="text-xs sm:text-sm opacity-90 ">
+            Amplios chalets <br /> con jardín privado
+          </span>
         </div>
       </div>
-      {/* <div className="absolute -bottom-6 transform -translate-x-1/2 text-white animate-bounce z-30">
+      <div className="absolute -bottom-4 transform -translate-x-1/2 text-white animate-bounce z-30">
         <ChevronDown className="w-8 h-8" />
-      </div> */}
+      </div>
     </section>
   );
 }

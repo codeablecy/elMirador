@@ -184,22 +184,22 @@ export default function LocationSection() {
               </Button>
             </a>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            <div className="text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12">
+            {/* <div className="text-center">
               <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
                 <div className="text-[#f39416] text-2xl font-bold">5 min</div>
                 <div className="text-[#234457] text-sm">Acceso a la playa</div>
               </div>
-            </div>
+            </div> */}
             <div className="text-center">
               <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
-                <div className="text-[#f39416] text-2xl font-bold">10 min</div>
+                <div className="text-[#f39416] text-2xl font-bold">20 min</div>
                 <div className="text-[#234457] text-sm">Campos de golf</div>
               </div>
             </div>
             <div className="text-center">
               <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
-                <div className="text-[#f39416] text-2xl font-bold">15 min</div>
+                <div className="text-[#f39416] text-2xl font-bold">40 min</div>
                 <div className="text-[#234457] text-sm">Aeropuerto</div>
               </div>
             </div>

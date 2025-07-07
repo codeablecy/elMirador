@@ -25,11 +25,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-1 bg-white/5 rounded-2xl p-6 flex flex-col items-center md:items-start mb-6 md:mb-0">
-            <div className="mb-6 flex flex-col items-center md:items-start">
+            <div className="-mb-6 md:-mt-16 md:-ml-8 flex flex-col items-center ">
               <Logo
-                width={120}
-                height={120}
-                className="object-contain w-32 h-32 mb-4"
+                width={600}
+                height={600}
+                className="object-contain w-auto h-auto -mb-14 -mt-20 top-10"
               />
             </div>
             {/* Contact Info */}
